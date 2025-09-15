@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Nutrino Bites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #F7ECE7;
+      color: #3A3242;
+      line-height: 1.55;
+    }
+    h1,h2,h3,p,li {margin: 0.4rem 0;}
+    h1,h2,h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      color: #57476F;
+      letter-spacing: 0.04em;
+    }
+    h1 { font-size: 3rem;}
+    h2 { font-size: 2.4rem;}
+    h3 { font-size: 1.8rem;}
+    p,li {
+      color: #3a3242cc;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    ul {
+      padding-left: 1.6rem;
+      margin: 1rem 0 1.2rem 0;
+      color: #5a4c70;
+      font-weight: 500;
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
+    a {
+      color: #705ab9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #d274c2;
+      outline: none;
+    }
+    button {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      border: none;
+      border-radius: 24px;
+      padding: 0.65rem 2rem;
+      color: #fff;
+      background: linear-gradient(90deg,#9f6adb,#da68c3);
+      box-shadow: 0 4px 18px rgba(218,104,195,0.54);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      user-select:none;
+    }
+    button:hover, button:focus {
+      background: linear-gradient(90deg,#be49cc,#de91db);
+      outline:none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(102, 85, 146, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    nav.container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-search {
+      font-size: 1.6rem;
+      color: #8e7cc3;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 0.5rem;
+      transition: background-color 0.2s ease;
+      user-select: none;
+    }
+    .nav-search:hover {
+      background-color: #e6dbfa;
+      color: #a46edd;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+      margin: 0;
+      padding: 0;
+      color: #906d91;
+      font-size: 1.1rem;
+    }
+    ul.nav-links li a {
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    ul.nav-links li a:hover {
+      color: #b779cd;
+    }
+
+    /* Hero Section with text left and big sized intro, image right */
+    .hero-wrapper {
+      background: linear-gradient(120deg, #f7ece7 50%, #f0d9f6 100%);
+      padding: 5rem 2vw 6rem;
+      text-align: left;
+    }
+    .hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      padding: 0 1.5rem;
+    }
+    .hero-text {
+      flex: 1 1 52%;
+      max-width: 600px;
+      text-align: left;
+    }
+    .hero-text h1 {
+      font-size: 3.9rem;
+      color: #4c3575;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+    }
+    .hero-text p.intro {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #6f5e8f;
+      font-style: italic;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+      max-width: 490px;
+    }
+    .hero-text p.tagline {
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #a95fc7;
+      font-style: italic;
+      letter-spacing: 0.035em;
+      margin-top: 0;
+    }
+    .hero-img {
+      flex: 1 1 42%;
+      max-width: 420px;
+      text-align: center;
+    }
+    .hero-img img {
+      width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 14px 44px rgba(183, 119, 219, 0.4);
+      filter: drop-shadow(0 0 12px rgba(183, 119, 219, 0.7));
+    }
+    @media (max-width: 960px) {
+      .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+      .hero-text p.intro {
+        margin-bottom: 1.5rem;
+      }
+      .hero-img {
+        max-width: 260px;
+      }
+    }
+
+    /* Flavours Section - big image right, text left, one shown */
+    .flavours {
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1rem;
+      text-align: left;
+      position: relative;
+    }
+    .flavour-card {
+      display: flex;
+      justify-content: space-between;
+      background: #f0d8f6;
+      border-radius: 2rem;
+      box-shadow: 0 6px 28px rgba(181, 115, 218, 0.4);
+      padding: 3rem 2rem 3rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: #422f66;
+      transition: opacity 0.3s ease;
+      user-select: none;
+      align-items: center;
+      gap: 3rem;
+    }
+    .flavour-card.hide {
+      display: none;
+    }
+    .flavour-text {
+      flex: 1 1 47%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .flavour-text h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #763e9e;
+    }
+    .flavour-text p {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+      color: #593d94;
+    }
+    .flavour-text p strong {
+      color: #4c3478;
+      font-weight: 700;
+    }
+    .flavour-image {
+      flex: 1 1 47%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flavour-image img {
+      max-width: 380px;
+      width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 0 26px rgba(216, 177, 222, 0.87);
+      object-fit: cover;
+      user-select: none;
+    }
+    .flavour-nav {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      user-select: none;
+    }
+    .nav-arrow {
+      font-size: 3.8rem;
+      color: #a27bcd;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 0 15px;
+    }
+    .nav-arrow:hover {
+      color: #704fa0;
+    }
+
+    /* Eco Section with bold heading & horizontal space */
+    .eco-wrapper {
+      width: 100vw;
+      background: #f7e4f1;
+      padding: 4rem 1.5rem 5rem;
+      margin: 5rem 0;
+      box-shadow: 0 8px 36px rgba(183, 117, 210, 0.46);
+      user-select: none;
+    }
+    .eco-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .eco-heading {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: 2.6rem;
+      color: #6f4c8f;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .eco-cards {
+      display: flex;
+      gap: 3rem;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      user-select:none;
+    }
+    .eco-card {
+      flex-basis: 24%;
+      background: #f2d2e4;
+      border-radius: 1.9rem;
+      padding: 2.6rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 35px rgba(190, 138, 201, 0.45);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #815ea9;
+    }
+    .eco-card:hover {
+      transform: translateY(-10px) scale(1.07);
+      box-shadow: 0 11px 52px rgba(200, 157, 212, 0.76);
+      background: #d6a7e3;
+      color: #7a3e89;
+    }
+    .eco-icon {
+      font-size: 3.8rem;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 0 6px #cbaede);
+    }
+    .eco-quality {
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    /* Prices in line */
+    .pricing {
+      max-width: 950px;
+      margin: 4rem auto 3rem auto;
+      padding: 0 2vw;
+      color: #6d496b;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #5e4980;
+      margin-bottom: 3rem;
+    }
+    .pricing-card-container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      user-select:none;
+    }
+    
+    .pricing-card {
+      background: #e7d4f1;
+      border-radius: 2rem;
+      box-shadow: 0 6px 32px rgba(201, 157, 206, 0.7);
+      width: 220px;
+      min-height: 370px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.75rem 2rem;
+      cursor: pointer;
+      color: #684a96;
+      transition: all 0.4s ease;
+    }
+    .pricing-card:hover {
+      background-color: #c293d9;
+      box-shadow: 0 12px 46px rgba(168, 110, 198, 0.8);
+      color: #482c7e;
+      transform: scale(1.07) translateY(-16px);
+      z-index: 10;
+    }
+    .pricing-img img {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      margin-bottom: 1.3rem;
+      filter: drop-shadow(0 0 10px #bb9dbbcc);
+      transition: filter 0.38s ease;
+    }
+    .pricing-card:hover .pricing-img img {
+      filter: drop-shadow(0 0 17px #d9b0ff);
+    }
+    .pricing-title {
+      font-family: 'Merriweather', serif;
+      font-weight: 600;
+      font-size: 1.85rem;
+      margin-bottom: 1.3rem;
+    }
+    .pricing-title span {
+      color: #d1a6f0;
+      font-style: italic;
+    }
+    .pricing-price {
+      font-size: 2.9rem;
+      font-weight: 900;
+      margin-bottom: 1.3rem;
+      color: #9a7bca;
+    }
+    .pricing-desc {
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #8a64a5;
+      margin-bottom: 1.5rem;
+    }
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .badge {
+      background: #c8b1ddbb;
+      border-radius: 18px;
+      padding: 0.45rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #583a7b;
+      white-space: nowrap;
+    }
+    .badge-gluten { background: #8f5d8bbb; }
+    .badge-highfiber { background: #b7d6b1bb; color: #3f683e; }
+    .badge-bestvalue { background: #ffbb9d; color: #6b3f14; }
+    .btn-buy {
+      margin-top: 2.3rem;
+      background: #905eba;
+      border-radius: 2rem;
+      padding: 0.9rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #ffc5ff;
+      box-shadow: 0 6px 22px rgba(147, 92, 186, 0.7);
+      transition: background 0.3s ease, box-shadow 0.35s ease;
+    }
+    .btn-buy:hover {
+      background: #b88ee4;
+      box-shadow: 0 8px 32px rgba(198, 158, 212, 0.9);
+      color: #4d2870;
+      cursor: pointer;
+    }
+
+    /* About Section horizontally */
+    .about-nutrition {
+      max-width: 1080px;
+      margin: 3rem auto 5rem auto;
+      padding: 3rem 3vw 5rem;
+      background: #e7d7ef;
+      border-radius: 2.5rem;
+      box-shadow: 0 6px 42px #c3b1eebb;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      color: #5a4572;
+      user-select: none;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1 1 50%;
+      font-size: 1.23rem;
+      line-height: 1.7;
+      font-weight: 400;
+      min-width: 260px;
+    }
+    .about-nutrition h2 {
+      flex-basis: 100%;
+      font-weight: 700;
+      font-size: 2.6rem;
+      margin-bottom: 1.7rem;
+      color: #6a4f8b;
+      text-align: left;
+      width: 100%;
+    }
+ .about-photos {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: -60px; /* overlap creatively */
+  position: relative;
+  min-width: 260px;
+  height: 400px; /* adjust for bigger images */
+}
+
+.about-img-large {
+  width: 220px; /* bigger image */
+  height: 300px;
+  border-radius: 1.8rem;
+  box-shadow: 0 6px 20px #9c86c7aa;
+  z-index: 2;
+}
+
+.about-img-small {
+  width: 180px; /* slightly smaller */
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px #bdb1e6cc;
+  transform: translateX(-50px) translateY(40px); /* creative overlap */
+  z-index: 1;
+}
+
+    .about-photos img {
+      border-radius: 1.8rem;
+      box-shadow: 0 4px 18px #9c86c7aa;
+      width: 280px;
+      height: 300px;
+      object-fit: cover;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .about-photos img:hover {
+      transform: scale(1.12);
+      box-shadow: 0 7px 36px #bdb1e6cc;
+      cursor: pointer;
+    }
+
+    /* Join Section */
+    .join {
+      max-width: 720px;
+      margin: 3.5rem auto 5rem auto;
+      padding: 0 4vw;
+      text-align: center;
+      color: #906fa3;
+      font-weight: 500;
+      user-select: none;
+    }
+    .join h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 2.1rem;
+      color: #7a5f96;
+      margin-bottom: 1.5rem;
+    }
+    .join p {
+      margin: 0.7rem 0;
+      font-size: 1.3rem;
+    }
+    .social-icons a {
+      margin: 0 1.4rem;
+      font-size: 2.5rem;
+      color: #a676c0;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #5e4275;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff0fb;
+      text-align: center;
+      padding: 1rem 0;
+      color: #7a507a;
+      font-size: 0.95rem;
+      user-select: none;
+    }
+
+    /* Scroll animations */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .scroll-animate.active {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 960px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 4vw;
+      }
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+      .hero-img {
+        max-width: 260px;
+        margin: 0 auto 2rem;
+      }
+      .flavour-card {
+        flex-direction: column;
+        max-width: 95vw;
+        padding: 2rem 1rem;
+        align-items: center;
+        text-align: center;
+      }
+      .flavour-text {
+        width: 100%;
+        padding: 0 0 1.8rem 0;
+        font-size: 1.1rem;
+      }
+      .flavour-image {
+        width: 100%;
+        max-width: 320px;
+      }
+      .flavour-image img {
+        width: 100%;
+        border-radius: 1.8rem;
+      }
+      .eco {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.7rem;
+      }
+      .eco-card {
+        flex: 1 1 45%;
+        margin-bottom: 2rem;
+      }
+      .pricing-card-container {
+        flex-direction: column;
+        max-width: 90vw;
+        margin: 2rem auto;
+        gap: 1.8rem;
+        align-items: center;
+      }
+      .pricing-card {
+        width: 100%;
+        max-width: 380px;
+      }
+      .about-nutrition {
+        flex-direction: column;
+        padding: 2.8rem 3vw 4rem;
+        max-width: 95vw;
+      }
+      .about-nutrition h2,
+      .about-text,
+      .about-photos {
+        width: 100%;
+        text-align: center;
+      }
+      .about-photos {
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.6rem;
+      }
+      .about-photos img {
+        width: 110px;
+        height: 110px;
+      }
+      .join {
+        padding: 0 5vw;
+      }
+      header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(102, 85, 146, 0.15);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+/* Testimonials Section */
+.testimonials {
+  background: #fdfdfd;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials .section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.testimonial-slider {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-slider:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.testimonial h4 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #666;
+}
+/* Testimonials Section */
+.testimonials {
+  background: #fdfdfd;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials .section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.testimonial-slider {
+  max-width: 650px;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.testimonial {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.testimonial h4 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #666;
+}
+
+/* Navigation Buttons */
+.testimonial-btn {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.testimonial-btn:hover {
+  background: #ff3b3b;
+}
+
+
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" role="navigation" aria-label="Primary navigation">
+      <div class="nav-left">
+        <span class="nav-search" tabindex="0" role="button" aria-label="Search"><i class="fas fa-search"></i></span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Discounts</a></li>
+        </ul>
+      </nav>
+    </nav>
+  </header>
+
+
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-wrapper scroll-animate" aria-label="Nutrino Bites Introduction">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Nutrino Bites</h1>
+          <p class="intro">Welcome to Nutrino Bites — your go-to healthy snack that's natural, delicious, and packed with the power to boost your immunity! Explore our range of flavours and choose the perfect bite for every occasion.</p>
+          <p class="tagline">A Perfect Immune Booster</p>
+        </div>
+        <div class="hero-img" aria-hidden="true">
+          <img src="main bar.png" alt="main bar" />
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Flavours -->
+    <section class="flavours scroll-animate" aria-label="Our Flavours">
+      <h2>Our Flavours</h2>
+
+      <div class="flavour-card" id="flavour-0">
+        <div class="flavour-text">
+          <h3>Apple Nutrino Bite</h3>
+          <p><strong>Ingredients:</strong> Apple pulp, oats, honey</p>
+          <p><strong>Benefits:</strong> Boosts immunity, rich in fiber</p>
+        </div>
+        <div class="flavour-image">
+          <img src="apple bar.png" alt="apple bar" />
+        </div>
+      </div>
+      <div class="flavour-card" id="flavour-1" style="display:none;">
+        <div class="flavour-text">
+          <h3>Guava Nutrino Bite</h3>
+          <p><strong>Ingredients:</strong> Guava, nuts, natural sugar</p>
+          <p><strong>Benefits:</strong> Vitamin C rich, improves digestion</p>
+        </div>
+        <div class="flavour-image">
+          <img src="guva bar.png" alt="guva bar" />
+        </div>
+      </div>
+      <div class="flavour-card" id="flavour-2" style="display:none;">
+        <div class="flavour-text">
+          <h3>Strawberry Nutrino Bite</h3>
+          <p><strong>Ingredients:</strong> Strawberry, almonds, oats</p>
+          <p><strong>Benefits:</strong> Antioxidant rich, healthy skin</p>
+        </div>
+        <div class="flavour-image">
+          <img src="straberry bar.png" alt="straberry bar" />
+        </div>
+      </div>
+      <div class="flavour-card" id="flavour-3" style="display:none;">
+        <div class="flavour-text">
+          <h3>Pineapple Nutrino Bite</h3>
+          <p><strong>Ingredients:</strong> Pineapple, cashews, honey</p>
+          <p><strong>Benefits:</strong> Aids digestion, energy booster</p>
+        </div>
+        <div class="flavour-image">
+          <img src="pinapple bar.png" alt="Pinapple bar" />
+        </div>
+      </div>
+      <div class="flavour-card" id="flavour-4" style="display:none;">
+        <div class="flavour-text">
+          <h3>Multigrain Nutrino Bite</h3>
+          <p><strong>Ingredients:</strong> Nuts, oats, cocoa, honey</p>
+          <p><strong>Benefits:</strong> High protein, long-lasting energy</p>
+        </div>
+        <div class="flavour-image">
+          <img src="millet bar.png" alt="millet bar" />
+        </div>
+      </div>
+
+      <div class="flavour-nav" aria-label="Flavour navigation">
+        <button class="nav-arrow" id="prevFlavour" aria-label="Previous flavour">&#8592;</button>
+        <button class="nav-arrow" id="nextFlavour" aria-label="Next flavour">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- Eco-Friendly Commitment -->
+    <section class="eco-wrapper scroll-animate" aria-label="Eco-Friendly Commitment">
+      <h2 class="eco-heading">Eco-Friendly Commitment</h2>
+      <div class="eco container" role="list">
+        <div class="eco-card" role="listitem">
+          <span class="eco-icon" aria-hidden="true">🌱</span>
+          <div class="eco-quality">Paper covers for packing</div>
+        </div>
+        <div class="eco-card" role="listitem">
+          <span class="eco-icon" aria-hidden="true">🚫</span>
+          <div class="eco-quality">No plastic</div>
+        </div>
+        <div class="eco-card" role="listitem">
+          <span class="eco-icon" aria-hidden="true">🥗</span>
+          <div class="eco-quality">No preservatives</div>
+        </div>
+        <div class="eco-card" role="listitem">
+          <span class="eco-icon" aria-hidden="true">🎨</span>
+          <div class="eco-quality">No added colors</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sizes & Pricing -->
+    <section class="pricing scroll-animate container">
+      <h2>Sizes &amp; Pricing</h2>
+      <div class="pricing-card-container">
+        <div class="pricing-card small"> 
+          <div class="pricing-img"><img src="millet bar.png" alt="millet bar" /></div>
+          <div class="pricing-title">Mini <span>Bites</span></div>
+          <div class="pricing-price">₹<b>xx</b></div>
+          <div class="pricing-desc">Perfect for on-the-go snacking!</div>
+          <div class="badge-container">
+            <div class="badge badge-gluten">Gluten-Free</div>
+            <div class="badge badge-highfiber">High Fiber</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+        <div class="pricing-card large featured">
+          <div class="pricing-img"><img src="pic1.png" alt="pic1" /></div>
+          <div class="pricing-title">Large <span class="rainbow">Bites</span></div>
+          <div class="pricing-price">₹<b>xx</b></div>
+          <div class="pricing-desc">Satisfying &amp; Sharing-Friendly</div>
+          <div class="badge-container">
+            <div class="badge badge-bestvalue">Best Value</div>
+            <div class="badge badge-highfiber">High Fiber</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+        <div class="pricing-card packet">
+          <div class="pricing-img"><img src="pic2.png" alt="pic2" /></div>
+          <div class="pricing-title">Family <span>Packets</span></div>
+          <div class="pricing-price special">Special <b>Price</b></div>
+          <div class="pricing-desc">20 bites in a value pack!</div>
+          <div class="badge-container">
+            <div class="badge badge-gluten">Gluten-Free</div>
+            <div class="badge badge-bestvalue">Best Value</div>
+          </div>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-nutrition scroll-animate container" aria-label="Why Nutrino Bites?">
+      <h2>Why Nutrino Bites?</h2>
+      <div class="about-text">
+        <p>Our bites are crafted from nature’s best—combining superfruits, wholesome grains, and nuts with zero preservatives. Every Nutrino Bite is packed with essential vitamins, protein, and delicious flavor. It’s the perfect snack for school, work, or post-workout recovery. When you crave something delicious, nutritious, and eco-friendly, choose Nutrino!</p>
+        <ul>
+          <li>Rich in dietary fiber for gut health.</li>
+          <li>Oats and nuts provide sustained energy throughout your busy day.</li>
+          <li>Paper packaging means zero plastic waste for a healthier planet.</li>
+        </ul>
+      </div>
+      <div class="about-photos">
+        <img src="pic3.png" alt="pic3" />
+       
+        
+      </div>
+    </section>
+    <section class="testimonials scroll-animate">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="testimonial-slider">
+    <button class="testimonial-btn prev" onclick="prevTestimonial()">&#10094;</button>
+    
+    <div class="testimonial">
+      <p id="testimonial-text">"NutrinoBites are so tasty and healthy! My kids love them."</p>
+      <h4 id="testimonial-author">- Ananya, Hyderabad</h4>
+    </div>
+
+    <button class="testimonial-btn next" onclick="nextTestimonial()">&#10095;</button>
+  </div>
+</section>
+
+
+
+    <!-- Join Section -->
+    <section class="join scroll-animate container" aria-label="Join us">
+      <h2>Join Us</h2>
+      <p>If interested, contact us at:</p>
+      <p>📞 +91 98765 43210, +91 98765 43211, +91 98765 43212</p>
+      <div class="social-icons" aria-label="Follow us on social media">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>About Us | Address: Nutrino Bites Pvt Ltd | Customer Care: support@nutrinobites.com</p>
+    <p>&copy; 2025 Nutrino Bites. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Flavour navigation
+    const flavourCards = [...document.querySelectorAll('.flavour-card')];
+    let currentFlavour = 0;
+    function showFlavour(index){
+      index = (index + flavourCards.length) % flavourCards.length;
+      flavourCards.forEach((card,i) => card.style.display = i === index ? 'flex' : 'none');
+      currentFlavour = index;
+    }
+    document.getElementById('prevFlavour').addEventListener('click', () => showFlavour(currentFlavour - 1));
+    document.getElementById('nextFlavour').addEventListener('click', () => showFlavour(currentFlavour + 1));
+    showFlavour(currentFlavour);
+
+    // Scroll reveal
+    const scrollItems = [...document.querySelectorAll('.scroll-animate')];
+    function revealOnScroll(){
+      const trigger = window.innerHeight * 0.85;
+      scrollItems.forEach(item => {
+        if(item.getBoundingClientRect().top < trigger){
+          item.classList.add('active');
+        }
+      });
+    }
+    // Customer Testimonials Auto Slider
+const testimonials = [
+  { text: "NutrinoBites are so tasty and healthy! My kids love them.", author: "- Ananya, Hyderabad" },
+  { text: "Perfect immune booster. I take them daily after workouts.", author: "- Rahul, Bangalore" },
+  { text: "I love the eco-friendly packaging. No guilt, only goodness!", author: "- Priya, Mumbai" },
+  { text: "Tastes amazing and feels so fresh. My favorite snack now!", author: "- Kiran, Pune" },
+  { text: "Affordable and healthy at the same time. Totally worth it.", author: "- Sneha, Chennai" },
+  { text: "The pineapple flavor is my absolute favorite! Refreshing!", author: "- Aarav, Delhi" },
+  { text: "Finally a snack with no preservatives. Thank you NutrinoBites!", author: "- Meera, Kolkata" }
+];
+
+let tIndex = 0;
+function showTestimonial() {
+  document.getElementById("testimonial-text").textContent = testimonials[tIndex].text;
+  document.getElementById("testimonial-author").textContent = testimonials[tIndex].author;
+  tIndex = (tIndex + 1) % testimonials.length;
+}
+
+// Initial load
+showTestimonial();
+setInterval(showTestimonial, 4000); // change every 4 seconds
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
+    
+  </script>
+</body>
+</html>
